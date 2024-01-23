@@ -16,7 +16,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='flex bg-white items-center justify-between relative h-[60px] w-full shadow-md pl-[20px] pr-[20px] overflow-x-clip border-b-2 border-black'>
+    <div className='flex z-40 bg-white items-center justify-between relative h-[60px] w-full shadow-md pl-[20px] pr-[20px] overflow-x-clip border-b-2 border-black'>
       <div className='flex items-center h-[100%]'>  
         <img className='h-[80%]' src="/coachivo.png" alt="" />
         <a className='font-bold text-[16px]' href="">Coachivo</a>

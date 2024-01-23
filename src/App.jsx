@@ -6,7 +6,9 @@ function App() {
   return (
     <>
       <Navbar />
-
+      <div className="m-0 overflow-x-visible">
+        <img className="h-[100vh] md:h-[120vh] -translate-y-4" src="/banner1.jpg" alt="" />
+      </div>
       
       <Routes>
         <Route path="/" element={<div></div>} />
