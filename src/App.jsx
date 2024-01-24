@@ -1,14 +1,14 @@
+import { Routes, Route } from "react-router-dom"
+
 import Navbar from "./components/layout/Navbar"
 
-import { Routes, Route } from "react-router-dom"
+import Home from "./components/pages/Home"
 
 function App() {
   return (
     <>
       <Navbar />
-      <div className="m-0 overflow-x-visible">
-        <img className="h-[100vh] md:h-[120vh] -translate-y-4" src="/banner1.jpg" alt="" />
-      </div>
+      <Home />
       
       <Routes>
         <Route path="/" element={<div></div>} />

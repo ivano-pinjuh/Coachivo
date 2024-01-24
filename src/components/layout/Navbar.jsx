@@ -24,7 +24,7 @@ const Navbar = () => {
       <IoIosMenu onClick={showMenuHandler} className='lg:hidden text-3xl' />
 
 
-      <div id='sidebar-menu' className='flex h-40 w-full border-black bg-pink-300 md:hidden translate-x-[100%] z-50 absolute top-0 right-0 transition-all'>
+      <div id='sidebar-menu' className='flex h-40 w-full border-b-2 border-black bg-pink-300 md:hidden translate-x-[100%] z-50 absolute top-0 right-0 transition-all'>
         <h3 onClick={showMenuHandler}>close</h3>
       </div>
     </div>
