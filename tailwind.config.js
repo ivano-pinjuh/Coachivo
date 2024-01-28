@@ -16,7 +16,8 @@ export default {
       'azure': '#0C86FE',
       'brilliant-azure': '#3C9DFC',
       'midnight-green': '#0F3E59',
-
+      'black': '#000000',
+      'white': '#FFFFFF',
     },
     extend: {},
   },
