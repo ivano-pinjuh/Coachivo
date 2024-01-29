@@ -3,7 +3,7 @@ const Home = () => {
     <div className="w-full">
       
       {/* Hero section */}
-      <div className="w-full h-[65vh] pt-[13vh] border-b-[1px] m-0 bg-isabelline relative">
+      <div className="w-full min-h-fit h-[65vh] pt-[13vh] border-b-[1px] m-0 bg-isabelline relative">
       
         <div className="w-full px-[10%]">
           <h1 className="font-poppins font-bold text-4xl text-shadow">
@@ -39,16 +39,48 @@ const Home = () => {
       {/* Coaches section */}
       <div className="w-full bg-milk pt-[15vh] pb-[8vh]">
         <div className="flex justify-between w-[55vw] pb-[7vh] m-auto">
-          <div className="w-32 border-[1px] rounded-full h-32 shadow-xl"></div>
-          <div className="w-32 border-[1px] rounded-full h-32 shadow-xl"></div>
-          <div className="w-32 border-[1px] rounded-full h-32 shadow-xl"></div>
-          <div className="w-32 border-[1px] rounded-full h-32 shadow-xl"></div>
+          <div className="w-32 border-[1px] rounded-full h-32 shadow-xl bg-brilliant-azure"></div>
+          <div className="w-32 border-[1px] rounded-full h-32 shadow-xl bg-brilliant-azure"></div>
+          <div className="w-32 border-[1px] rounded-full h-32 shadow-xl bg-brilliant-azure"></div>
+          <div className="w-32 border-[1px] rounded-full h-32 shadow-xl bg-brilliant-azure"></div>
           
         </div>
 
         <p className="text-center cursor-pointer font-roboto-slab opacity-85 underline font-semibold">
           Learn from 100+ world class coaches
         </p>
+      </div>
+
+
+
+      {/* New section */}
+      <div className="w-full bg-isabelline h-80 pt-[12vh] px-[10vw]">
+        <h1 className="font-poppins font-bold text-4xl text-shadow">
+          New on Coachivo
+        </h1>
+
+        <div className="">
+          <div className="hidden md:flex w-full mt-[6vh]">
+            <h3 className="font-roboto-slab text-lg px-10 pb-2 border-b-2 cursor-pointer font-semibold">
+              Build-up Play
+            </h3>
+
+            <h3 className="font-roboto-slab text-lg px-10 pb-2 border-b-2 opacity-50 cursor-pointer font-semibold">
+              Midfield Excellence
+            </h3>
+
+            <h3 className="font-roboto-slab text-lg px-10 pb-2 border-b-2 opacity-50 cursor-pointer font-semibold">
+              Attacking Prowess
+            </h3>
+            
+            <div className="border-b-2 opacity-50 flex-grow"></div>
+          </div>
+
+          <div>
+
+          </div>
+        </div>
+
       </div>
 
 
