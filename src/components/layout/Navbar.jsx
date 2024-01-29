@@ -48,7 +48,7 @@ const Navbar = () => {
 
         <div className='hidden lg:flex bg-grayish h-full w-fit px-12 pl-4 skew-x-[-18deg] translate-x-10'>
           <div className='flex items-center gap-2 h-full skew-x-[18deg] mr-2'>
-            <a className='text-brilliant-azure font-roboto-slab mr-2' href="">Log in</a>
+            <a className='text-brilliant-azure font-poppins mr-2' href="">Log in</a>
             <a className='rounded-[4px] bg-azure text-milk font-roboto-slab p-2 px-4 text-sm' href="">Join for Free</a>
           </div>
         </div>
