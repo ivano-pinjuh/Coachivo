@@ -28,10 +28,10 @@ const Navbar = () => {
       
       <a className='hidden lg:inline-block text-lg font-semibold font-poppins' href="">Courses</a>
 
-      <div className='hidden lg:flex items-center justify-between rounded h-[42px] border-black border-[0.5px] w-80'>
+      <div className='hidden lg:flex items-center justify-between rounded h-[42px] border w-80'>
         <input id='search' name='search' className='h-10 px-4 rounded-l font-roboto-slab text-xs' type="search" placeholder='Search for anything' />
-        <div className='flex justify-center items-center rounded-r h-[42px] w-[42px] bg-azure'>
-          <IoIosSearch className='cursor-pointer text-milk text-2xl' />
+        <div className='cursor-pointer flex justify-center border-t border-b items-center rounded-r h-[42px] w-[42px] bg-azure'>
+          <IoIosSearch className='text-milk text-2xl' />
         </div>
       </div>
 

@@ -21,7 +21,7 @@ const Hero = () => {
         <img className="" src="/hero_coach.png" alt="Image of a coach" />
       </div>
 
-      <div className="absolute top-[calc(100%-2.5rem)] h-20 bg-midnight-green -translate-x-4 pl-8 w-[50vw] skew-x-[-18deg]">
+      <div className="absolute top-[calc(100%-2.5rem)] h-20 bg-midnight-green -translate-x-4 pl-8 w-[55vw] skew-x-[-18deg]">
         <div className="skew-x-[18deg] h-full flex items-center">
           <h2 className="font-poppins text-2xl w-full text-end pr-[10vw] font-semibold text-milk">
             Recognized by the world's best clubs
