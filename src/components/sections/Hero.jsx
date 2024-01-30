@@ -6,13 +6,13 @@ const Hero = () => {
           Become a football coach
         </h1>
 
-        <p className="mt-[5vh] sm:max-w-[60vw] lg:max-w-[35vw]  text-lg font-roboto-slab">
+        <p className="mt-[5vh] sm:max-w-[60vw] lg:max-w-[35vw] text-lg font-roboto-slab">
           Save €100+ on your annual Coachivo Plus subscription
           for a limited time. Gain full access to our diverse
           range of football courses.
         </p>
 
-        <button className="w-[25vw] text-lg h-12 bg-azure mt-[8vh] font-roboto-slab rounded shadow-btn text-milk border-[1px] border-black">
+        <button className="w-[25vw] text-lg h-11 bg-azure mt-[8vh] font-roboto-slab font-semibold rounded shadow-btn text-milk border-[1px] border-black">
           Start now
         </button>
       </div>

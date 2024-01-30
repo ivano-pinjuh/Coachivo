@@ -4,6 +4,11 @@ import NewCourses from "../sections/NewCourses"
 import Learn from "../sections/Learn"
 import Explore from "../sections/Explore"
 import Comments from "../sections/Comments"
+import Elevate from "../sections/Elevate"
+
+
+
+import Footer from "../layout/Footer"
 
 
 const Home = () => {
@@ -15,6 +20,8 @@ const Home = () => {
       <Learn />
       <Explore />
       <Comments />
+      <Elevate />
+      <Footer />
     </div>
   )   
 }

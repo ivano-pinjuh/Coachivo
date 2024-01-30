@@ -33,7 +33,7 @@ const NewCourses = () => {
       </div>
 
       <div className="w-full flex justify-center">
-        <button className="w-[30vw] text-lg h-12 bg-azure mt-[8vh] font-roboto-slab rounded shadow-btn text-milk border-[1px] border-black">
+        <button className="w-[20vw] text-lg h-10 bg-azure mt-[8vh] font-roboto-slab rounded shadow-btn text-milk border-[1px] border-black">
           Explore more
         </button>
       </div>

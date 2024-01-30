@@ -14,3 +14,14 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 15px,
                 rgba(0, 0, 0, 0.25) 0px 4px 6px;
 }
+
+.scrollbar-hidden {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    -ms-overflow-style: none;
+}
+  
+.scrollbar-hidden::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
