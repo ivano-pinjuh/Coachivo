@@ -3,7 +3,7 @@ import { GoClock } from "react-icons/go"
 
 const CourseCard = () => {
   return (
-    <div className="flex flex-col rounded-lg h-[400px] shadow-nav bg-milk w-[23%] overflow-clip">
+    <div className="flex flex-col rounded-lg h-[400px] shadow-nav bg-milk w-[46%] md:w-[23%] overflow-clip">
       {/*<img src="" alt="" />*/}
       <div className="w-full bg-brilliant-azure aspect-video"></div>
       

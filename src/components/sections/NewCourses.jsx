@@ -24,7 +24,7 @@ const NewCourses = () => {
           <div className="border-b-2 opacity-50 flex-grow"></div>
         </div>
 
-        <div className="flex mt-10 w-full justify-between">
+        <div className="flex mt-10 w-full flex-wrap gap-4 justify-between">
           <CourseCard/>
           <CourseCard/>
           <CourseCard/>
