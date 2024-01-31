@@ -2,7 +2,7 @@ import CourseCard from "../UI/CourseCard"
 
 const NewCourses = () => {
   return (
-    <div className="w-full bg-isabelline pb-[10vh] pt-[12vh] px-[10vw]">
+    <div className="w-full bg-isabelline pb-[10vh] pt-[10vh] md:pt-[12vh] px-[10vw]">
       <h1 className="font-poppins font-bold text-4xl text-shadow">
         New on Coachivo
       </h1>
@@ -24,7 +24,7 @@ const NewCourses = () => {
           <div className="border-b-2 opacity-50 flex-grow"></div>
         </div>
 
-        <div className="flex mt-10 w-full flex-wrap gap-4 justify-between">
+        <div className="flex mt-10 w-full flex-wrap gap-y-4 justify-between">
           <CourseCard/>
           <CourseCard/>
           <CourseCard/>
@@ -33,7 +33,7 @@ const NewCourses = () => {
       </div>
 
       <div className="w-full flex justify-center">
-        <button className="w-[20vw] text-lg h-10 bg-azure mt-[8vh] font-roboto-slab rounded shadow-btn text-milk border-[1px] border-black">
+        <button className="w-[60%] md:w-[40%] lg:w-[20vw] text-lg h-10 bg-azure mt-[8vh] font-roboto-slab rounded shadow-btn text-milk border-[1px] border-black">
           Explore more
         </button>
       </div>

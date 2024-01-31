@@ -15,7 +15,7 @@ const CourseCard = () => {
         </div>
         
 
-        <h5 className="font-poppins mt-3 text-lg font-semibold">
+        <h5 className="font-poppins mt-3 text-base md:text-lg font-semibold">
           Passive Approach in Defensive Situations
         </h5>
         <p className="font-roboto-slab mt-2 text-sm opacity-65">
@@ -25,8 +25,8 @@ const CourseCard = () => {
         <div className="flex h-full items-end justify-between">
 
           <div className="flex items-center gap-1">
-            <GoClock className="text-xl" />
-            <p className="font-roboto-slab">
+            <GoClock className="text-lg md:text-xl" />
+            <p className="font-roboto-slab text-sm md:text-base">
               3-6 hrs
             </p>
           </div>

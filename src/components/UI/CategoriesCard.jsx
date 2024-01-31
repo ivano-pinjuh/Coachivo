@@ -1,6 +1,6 @@
 const CategoriesCard = () => {
   return (
-    <div className="flex border w-[31%] h-[12vh] bg-milk rounded shadow-btn">
+    <div className="flex border w-full h-[14vh] lg:w-[31%] lg:h-[12vh] bg-milk rounded shadow-btn">
       {/*<img className="aspect-square h-full bg-azure" src="" alt="an image" />*/}
       <div className="aspect-square h-full bg-azure"></div>
 
