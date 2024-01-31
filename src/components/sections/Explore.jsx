@@ -21,9 +21,9 @@ const Explore = () => {
         
       </div>
 
-      <div className="absolute right-0 top-[calc(100%-2.5rem)] z-10 h-20 bg-midnight-green translate-x-4 pl-8 w-[55vw] skew-x-[18deg]">
+      <div className="absolute right-0 top-[calc(100%-2.5rem)] z-10 h-20 bg-midnight-green translate-x-4 pl-8 w-[120vw] md:w-[55vw] skew-x-[18deg]">
         <div className="skew-x-[-18deg] h-full flex items-center">
-          <h2 className="font-poppins text-2xl w-full text-start pl-[2vw] font-semibold text-milk">
+          <h2 className="font-poppins text-base lg:text-2xl w-full text-center md:text-start md:pl-[2vw] font-semibold text-milk">
             From the Coachivo community
           </h2>
         </div>

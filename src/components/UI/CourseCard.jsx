@@ -25,12 +25,12 @@ const CourseCard = () => {
         <div className="flex h-full items-end justify-between">
 
           <div className="flex items-center gap-1">
-            <GoClock className="text-lg md:text-xl" />
-            <p className="font-roboto-slab text-sm md:text-base">
+            <GoClock className="text-sm md:text-xl" />
+            <p className="font-roboto-slab text-xs md:text-base">
               3-6 hrs
             </p>
           </div>
-          <p className="font-semibold font-roboto-slab">
+          <p className="font-semibold text-sm md:text-base font-roboto-slab">
             €14.99
           </p>
         </div>

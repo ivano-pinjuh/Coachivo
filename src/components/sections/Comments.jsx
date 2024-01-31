@@ -65,7 +65,7 @@ const Comments = () => {
 
   return (
     <div className="w-full overflow-x-auto scrollbar-hidden bg-isabelline" ref={containerRef}>
-      <div className="flex w-fit gap-[3vw] pl-[10vw] pt-[16vh] pb-[13vh]">
+      <div className="flex w-fit gap-[10vw] md:gap-[3vw] px-[10vw] pt-[16vh] pb-[13vh]">
         <CommentCard />
         <CommentCard />
         <CommentCard />
