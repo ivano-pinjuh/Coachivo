@@ -19,7 +19,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='flex justify-between items-center w-full h-[72px] z-50 bg-milk relative shadow-nav overflow-x-clip'>
+    <div className=' flex justify-between items-center w-full h-[72px] z-50 bg-milk relative shadow-nav overflow-x-clip'>
       <div className='lg:hidden'>
         <IoIosMenu className='cursor-pointer text-4xl ml-6' />
       </div>
@@ -29,7 +29,7 @@ const Navbar = () => {
       <a className='hidden lg:inline-block text-lg font-semibold font-poppins' href="">Courses</a>
 
       <div className='hidden lg:flex items-center justify-between rounded h-[42px] border w-80'>
-        <input id='search' name='search' className='h-10 px-4 rounded-l font-roboto-slab text-xs' type="search" placeholder='Search for anything' />
+        <input id='search' className='h-10 flex-grow outline-none px-4 rounded-l font-roboto-slab text-xs' type="text" placeholder='Search for anything' />
         <div className='cursor-pointer flex justify-center border-t border-b items-center rounded-r h-[42px] w-[42px] bg-azure'>
           <IoIosSearch className='text-milk text-2xl' />
         </div>
