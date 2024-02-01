@@ -3,7 +3,7 @@ import { GoClock } from "react-icons/go"
 
 const CourseCard = () => {
   return (
-    <div className="flex flex-col rounded-lg h-[400px] shadow-nav bg-milk w-[46%] md:w-[23%] overflow-clip">
+    <div className="flex flex-col rounded-lg h-[380px] md:h-[400px] shadow-nav bg-milk w-[49%] md:w-[23%] overflow-clip">
       {/*<img src="" alt="" />*/}
       <div className="w-full bg-brilliant-azure aspect-video"></div>
       
@@ -18,7 +18,7 @@ const CourseCard = () => {
         <h5 className="font-poppins mt-3 text-base md:text-lg font-semibold">
           Passive Approach in Defensive Situations
         </h5>
-        <p className="font-roboto-slab mt-2 text-sm opacity-65">
+        <p className="font-roboto-slab mt-2 text-xs opacity-65">
           Mario Ivanković
         </p>
 
@@ -26,7 +26,7 @@ const CourseCard = () => {
 
           <div className="flex items-center gap-1">
             <GoClock className="text-sm md:text-xl" />
-            <p className="font-roboto-slab text-xs md:text-base">
+            <p className="font-roboto-slab text-sm md:text-base">
               3-6 hrs
             </p>
           </div>

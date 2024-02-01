@@ -1,6 +1,6 @@
 const Elevate = () => {
   return (
-    <div className="w-full flex-col md:flex-row flex px-[10vw] md:h-[55vh] bg-milk relative">
+    <div className="w-full flex-col md:flex-row flex px-[10vw] md:h-[60vh] bg-milk relative">
 
       <div className="flex flex-col w-full md:w-[60%] px-[10vw] md:pl-[10vw] md:pr-10 py-[10vh]">
         <h1 className="font-poppins font-bold text-4xl text-shadow">

@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <div className="w-full min-h-fit h-fit lg:h-[52vh] pb-[14vh] pt-[10vh] md:pb-[16vh] md:pt-[13vh] overflow-x-clip border-b-[1px] m-0 bg-isabelline relative">
+    <div className="w-full min-h-fit pb-[14vh] pt-[10vh] md:pb-[13vh] md:pt-[8vh] overflow-x-clip border-b-[1px] m-0 bg-isabelline relative">
       <div className="w-full px-[10%]">
         <h1 className="font-poppins font-bold sm:max-w-[60vw] md:max-w-[45vw] lg:max-w-[35vw] text-4xl text-shadow">
           Become a football coach
