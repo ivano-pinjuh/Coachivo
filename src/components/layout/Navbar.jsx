@@ -10,7 +10,7 @@ const Navbar = () => {
   const showMenuHandler = () => {
     if (menuShown) {
       setMenuShown(false)
-      document.getElementById('sidebar-menu').style.transform = "translateX(100%)"
+      document.getElementById('sidebar-menu').style.transform = "translateX(-100%)"
     }
     else {
       setMenuShown(true)
@@ -19,9 +19,14 @@ const Navbar = () => {
   }
 
   return (
-    <div className=' flex justify-between items-center w-full h-[72px] z-50 bg-milk relative shadow-nav overflow-x-clip'>
+    <div className=' flex justify-between items-center w-full h-[72px] z-40 bg-milk relative shadow-nav overflow-x-clip'>
+
+      <div id='sidebar-menu' className='fixed lg:hidden top-0 left-0 translate-x-full w-[100vw] z-50 h-[100vh] transition-all bg-milk'>
+        <button onClick={showMenuHandler}>Close</button>
+      </div>
+
       <div className='lg:hidden'>
-        <IoIosMenu className='cursor-pointer text-4xl ml-6' />
+        <IoIosMenu onClick={showMenuHandler} className='cursor-pointer text-4xl ml-6' />
       </div>
 
       <img className='cursor-pointer h-[36px] -translate-y-1' src="/logo.svg" alt="Logo" />
