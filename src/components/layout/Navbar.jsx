@@ -5,8 +5,39 @@ import { AiOutlineClose } from "react-icons/ai"
 
 import { useState } from 'react'
 
+import supabase from '../../supabase/auth'
+
+
 const Navbar = () => {
   const [menuShown, setMenuShown] = useState(false)
+
+  const [isSignedIn, setIsSignedIn] = useState(false)
+
+  const signInHandler = () => {
+    supabase.auth.signInWithOAuth({
+      provider: 'google',
+    })
+  }
+
+  const signOutHandler = async () => {
+    await supabase.auth.signOut()
+    .then(setIsSignedIn(false))
+    .catch(error => {
+      console.log(error)
+    })
+  }
+
+  supabase.auth.onAuthStateChange((event, session) => {
+    if (event === 'SIGNED_IN') {
+      console.log('SIGNED_IN')
+      setIsSignedIn(true)
+    }
+  })
+
+  
+  
+
+
 
   const showMenuHandler = () => {
     if (menuShown) {
@@ -33,14 +64,15 @@ const Navbar = () => {
           </div>
 
           <div className='flex flex-col gap-6 py-6 pl-2'>
-            <a className='text-lg font-semibold font-poppins' href="">Courses</a>
-            <a className='text-lg font-semibold font-poppins' href="">Pricing</a>
-            <a className='text-lg font-semibold font-poppins' href="">Become a coach</a>
+            <a className='text-lg font-semibold font-poppins cursor-pointer'>Courses</a>
+            <a className='text-lg font-semibold font-poppins cursor-pointer'>Pricing</a>
+            <a className='text-lg font-semibold font-poppins cursor-pointer'>Become a coach</a>
           </div>
           
           <div className='w-full flex justify-between items-center pt-5 border-t'>
-            <a className='text-center rounded font-poppins p-2 border-2 w-[49%]' href="">Log in</a>
-            <a className='text-center rounded bg-azure border-2 border-azure text-milk font-poppins w-[49%] p-2' href="">Register for free</a>
+            {!isSignedIn ? (<a className='text-center rounded font-poppins p-2 border-2 w-[49%] cursor-pointer' onClick={signInHandler}>Log in</a>) : (
+              <a className='text-center rounded font-poppins p-2 border-2 w-[100%] cursor-pointer' onClick={signOutHandler}>Log off</a>)}
+            {!isSignedIn && <a className='text-center rounded bg-azure border-2 border-azure text-milk font-poppins w-[49%] p-2 cursor-pointer'>Register for free</a>}
           </div>
         </div>
         
@@ -52,7 +84,7 @@ const Navbar = () => {
 
       <img className='cursor-pointer h-[36px] -translate-y-1' src="/logo.svg" alt="Logo" />
       
-      <a className='hidden lg:inline-block text-lg font-semibold font-poppins' href="">Courses</a>
+      <a className='hidden lg:inline-block text-lg font-semibold font-poppins cursor-pointer'>Courses</a>
 
       <div className='hidden lg:flex items-center justify-between rounded h-[42px] border w-80'>
         <input id='search' className='h-10 flex-grow outline-none px-4 rounded-l font-roboto-slab text-xs' type="text" placeholder='Search for anything' />
@@ -62,8 +94,8 @@ const Navbar = () => {
       </div>
 
       <div className='hidden lg:flex w-fit gap-8 px-6'>
-        <a className='text-lg hidden xl:inline-block font-semibold font-poppins' href="">Become a coach</a>
-        <a className='text-lg font-semibold font-poppins' href="">Pricing</a>
+        <a className='text-lg hidden xl:inline-block font-semibold font-poppins cursor-pointer'>Become a coach</a>
+        <a className='text-lg font-semibold font-poppins cursor-pointer'>Pricing</a>
       </div>
 
       <div className='flex h-full items-center'>
@@ -74,8 +106,10 @@ const Navbar = () => {
 
         <div className='hidden lg:flex bg-grayish h-full w-fit px-12 pl-4 skew-x-[-18deg] translate-x-10'>
           <div className='flex items-center gap-2 h-full skew-x-[18deg] mr-2'>
-            <a className='text-brilliant-azure font-poppins mr-2' href="">Log in</a>
-            <a className='rounded-[4px] bg-azure text-milk font-roboto-slab p-2 px-4 text-sm' href="">Join for Free</a>
+            {!isSignedIn ? (<a className='text-brilliant-azure font-poppins mr-2 cursor-pointer' onClick={signInHandler}>Log in</a>) : (
+              <a className='text-brilliant-azure font-poppins mr-2 cursor-pointer' onClick={signOutHandler}>Log off</a>
+            )}
+            {!isSignedIn && <a className='rounded-[4px] bg-azure text-milk font-roboto-slab p-2 px-4 text-sm cursor-pointer' onClick={signInHandler}>Join for Free</a>}
           </div>
         </div>
       </div>
