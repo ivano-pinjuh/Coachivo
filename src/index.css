@@ -25,3 +25,7 @@
     width: 0;
     display: none;
 }
+
+.lock-scroll {
+    overflow: hidden;
+}

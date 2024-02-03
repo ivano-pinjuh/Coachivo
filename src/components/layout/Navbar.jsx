@@ -1,6 +1,7 @@
 import { IoIosMenu } from 'react-icons/io'
 import { IoIosSearch } from "react-icons/io"
 import { MdOutlineShoppingCart } from 'react-icons/md' 
+import { AiOutlineClose } from "react-icons/ai"
 
 import { useState } from 'react'
 
@@ -11,18 +12,38 @@ const Navbar = () => {
     if (menuShown) {
       setMenuShown(false)
       document.getElementById('sidebar-menu').style.transform = "translateX(-100%)"
+      document.body.classList.toggle("lock-scroll")
     }
     else {
       setMenuShown(true)
       document.getElementById('sidebar-menu').style.transform = "translateX(0)"
+      document.body.classList.toggle("lock-scroll")
     }
   }
 
   return (
-    <div className=' flex justify-between items-center w-full h-[72px] z-40 bg-milk relative shadow-nav overflow-x-clip'>
+    <div className='flex justify-between items-center w-full h-[72px] z-40 bg-milk relative shadow-nav overflow-x-clip'>
 
-      <div id='sidebar-menu' className='fixed lg:hidden top-0 left-0 translate-x-full w-[100vw] z-50 h-[100vh] transition-all bg-milk'>
-        <button onClick={showMenuHandler}>Close</button>
+      <div id='sidebar-menu' className='fixed lg:hidden top-0 left-0 translate-x-full w-[100vw] z-50 h-[100vh] transition-all bg-black bg-opacity-75'>
+        <div className='flex flex-col py-6 px-[6vw] bg-milk'>
+
+          <div className='w-full flex justify-between items-center pb-3 border-b mb-3'>
+            <img className='cursor-pointer h-[36px] -translate-y-1 -translate-x-7' src="/logo.svg" alt="Logo" />
+            <AiOutlineClose onClick={showMenuHandler} className='text-3xl'/>
+          </div>
+
+          <div className='flex flex-col gap-6 py-6 pl-2'>
+            <a className='text-lg font-semibold font-poppins' href="">Courses</a>
+            <a className='text-lg font-semibold font-poppins' href="">Pricing</a>
+            <a className='text-lg font-semibold font-poppins' href="">Become a coach</a>
+          </div>
+          
+          <div className='w-full flex justify-between items-center pt-5 border-t'>
+            <a className='text-center rounded font-poppins p-2 border-2 w-[49%]' href="">Log in</a>
+            <a className='text-center rounded bg-azure border-2 border-azure text-milk font-poppins w-[49%] p-2' href="">Register for free</a>
+          </div>
+        </div>
+        
       </div>
 
       <div className='lg:hidden'>
