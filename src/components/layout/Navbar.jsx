@@ -5,7 +5,7 @@ import { AiOutlineClose } from "react-icons/ai"
 
 import { useState } from 'react'
 
-import supabase from '../../supabase/auth'
+import supabase from '../../supabase/supabase'
 
 import { useContext } from 'react'
 import { AuthContext } from '../../supabase/auth-context'
@@ -29,7 +29,7 @@ const Navbar = () => {
       window.location.reload()
     })
     .catch(error => {
-      console.log(error)
+      console.error(error)
     })
   }
 

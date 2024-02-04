@@ -1,6 +1,10 @@
+import { useContext } from "react"
 import CourseCard from "../UI/CourseCard"
+import { CoursesContext } from "../../supabase/courses-context"
 
 const NewCourses = () => {
+  const { coursesData, setCoursesData } = useContext(CoursesContext)
+
   return (
     <div className="w-full bg-isabelline pb-[10vh] pt-[10vh] md:pt-[12vh] px-[10vw]">
       <h1 className="font-poppins font-bold text-4xl text-shadow">
@@ -25,10 +29,10 @@ const NewCourses = () => {
         </div>
 
         <div className="flex mt-10 w-full flex-wrap gap-y-4 justify-between">
-          <CourseCard/>
-          <CourseCard/>
-          <CourseCard/>
-          <CourseCard/>
+          <CourseCard course={coursesData[0]} />
+          <CourseCard course={coursesData[0]} />
+          <CourseCard course={coursesData[0]} />
+          <CourseCard course={coursesData[0]} />
         </div>
       </div>
 

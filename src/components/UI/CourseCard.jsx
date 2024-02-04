@@ -1,7 +1,7 @@
 import { GoClock } from "react-icons/go"
 
 
-const CourseCard = () => {
+const CourseCard = (props) => {
   return (
     <div className="flex flex-col rounded-lg h-[380px] md:h-[400px] shadow-nav bg-milk w-[49%] md:w-[23%] overflow-clip">
       {/*<img src="" alt="" />*/}
@@ -16,7 +16,7 @@ const CourseCard = () => {
         
 
         <h5 className="font-poppins mt-3 text-base md:text-lg font-semibold">
-          Passive Approach in Defensive Situations
+          {props.course.title}
         </h5>
         <p className="font-roboto-slab mt-2 text-xs opacity-65">
           Mario Ivanković
