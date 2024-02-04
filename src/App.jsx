@@ -19,7 +19,7 @@ function App() {
       if (error) {
         throw error
       }
-      
+      //console.log(data)
       setCoursesData(data)
     } 
     catch (error) {

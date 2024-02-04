@@ -30,9 +30,9 @@ const NewCourses = () => {
 
         <div className="flex mt-10 w-full flex-wrap gap-y-4 justify-between">
           <CourseCard course={coursesData[0]} />
-          <CourseCard course={coursesData[0]} />
-          <CourseCard course={coursesData[0]} />
-          <CourseCard course={coursesData[0]} />
+          <CourseCard course={coursesData[1]} />
+          <CourseCard course={coursesData[2]} />
+          <CourseCard course={coursesData[3]} />
         </div>
       </div>
 
