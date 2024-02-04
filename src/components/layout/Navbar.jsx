@@ -7,11 +7,14 @@ import { useState } from 'react'
 
 import supabase from '../../supabase/auth'
 
+import { useContext } from 'react'
+import { AuthContext } from '../../supabase/auth-context'
+
 
 const Navbar = () => {
-  const [menuShown, setMenuShown] = useState(false)
+  const { currentUser, setCurrentUser } = useContext(AuthContext)
 
-  const [isSignedIn, setIsSignedIn] = useState(false)
+  const [menuShown, setMenuShown] = useState(false)
 
   const signInHandler = () => {
     supabase.auth.signInWithOAuth({
@@ -21,7 +24,10 @@ const Navbar = () => {
 
   const signOutHandler = async () => {
     await supabase.auth.signOut()
-    .then(setIsSignedIn(false))
+    .then(() => {
+      setCurrentUser({...currentUser, isSignedIn: false})
+      window.location.reload()
+    })
     .catch(error => {
       console.log(error)
     })
@@ -30,7 +36,7 @@ const Navbar = () => {
   supabase.auth.onAuthStateChange((event, session) => {
     if (event === 'SIGNED_IN') {
       console.log('SIGNED_IN')
-      setIsSignedIn(true)
+      setCurrentUser({...currentUser, isSignedIn: true})
     }
   })
 
@@ -70,9 +76,9 @@ const Navbar = () => {
           </div>
           
           <div className='w-full flex justify-between items-center pt-5 border-t'>
-            {!isSignedIn ? (<a className='text-center rounded font-poppins p-2 border-2 w-[49%] cursor-pointer' onClick={signInHandler}>Log in</a>) : (
+            {!currentUser.isSignedIn ? (<a className='text-center rounded font-poppins p-2 border-2 w-[49%] cursor-pointer' onClick={signInHandler}>Log in</a>) : (
               <a className='text-center rounded font-poppins p-2 border-2 w-[100%] cursor-pointer' onClick={signOutHandler}>Log off</a>)}
-            {!isSignedIn && <a className='text-center rounded bg-azure border-2 border-azure text-milk font-poppins w-[49%] p-2 cursor-pointer'>Register for free</a>}
+            {!currentUser.isSignedIn && <a className='text-center rounded bg-azure border-2 border-azure text-milk font-poppins w-[49%] p-2 cursor-pointer'>Register for free</a>}
           </div>
         </div>
         
@@ -106,10 +112,10 @@ const Navbar = () => {
 
         <div className='hidden lg:flex bg-grayish h-full w-fit px-12 pl-4 skew-x-[-18deg] translate-x-10'>
           <div className='flex items-center gap-2 h-full skew-x-[18deg] mr-2'>
-            {!isSignedIn ? (<a className='text-brilliant-azure font-poppins mr-2 cursor-pointer' onClick={signInHandler}>Log in</a>) : (
+            {!currentUser.isSignedIn ? (<a className='text-brilliant-azure font-poppins mr-2 cursor-pointer' onClick={signInHandler}>Log in</a>) : (
               <a className='text-brilliant-azure font-poppins mr-2 cursor-pointer' onClick={signOutHandler}>Log off</a>
             )}
-            {!isSignedIn && <a className='rounded-[4px] bg-azure text-milk font-roboto-slab p-2 px-4 text-sm cursor-pointer' onClick={signInHandler}>Join for Free</a>}
+            {!currentUser.isSignedIn && <a className='rounded-[4px] bg-azure text-milk font-roboto-slab p-2 px-4 text-sm cursor-pointer' onClick={signInHandler}>Join for Free</a>}
           </div>
         </div>
       </div>
