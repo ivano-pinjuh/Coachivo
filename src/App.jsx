@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 
 import Navbar from "./components/layout/Navbar"
 import Home from "./components/pages/Home"
+import Course from "./components/pages/Course"
 
 import { AuthContext } from "./supabase/auth-context"
 import { CoursesContext } from "./supabase/courses-context"
@@ -39,6 +40,7 @@ function App() {
         <Navbar />
         <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/course/:course_title" element={<Course />} />
 
         </Routes>
 
