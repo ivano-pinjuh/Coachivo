@@ -9,12 +9,20 @@ import supabase from '../../supabase/supabase'
 
 import { useContext } from 'react'
 import { AuthContext } from '../../supabase/auth-context'
+import { useNavigate } from 'react-router-dom'
 
 
 const Navbar = () => {
   const { currentUser, setCurrentUser } = useContext(AuthContext)
 
   const [menuShown, setMenuShown] = useState(false)
+
+  const navigate = useNavigate()
+  const homeHandler = () => {
+    navigate("/")
+  }
+
+
 
   const signInHandler = () => {
     supabase.auth.signInWithOAuth({
@@ -56,7 +64,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='flex justify-between items-center w-full h-[72px] z-40 bg-milk relative shadow-nav transition-all overflow-x-clip'>
+    <nav className='flex justify-between items-center w-full h-[72px] z-40 bg-milk relative shadow-nav transition-all overflow-x-clip'>
 
       <div id='sidebar-menu' className='fixed lg:hidden top-0 left-0 translate-x-full w-[100vw] z-50 h-[100vh] transition-all bg-black bg-opacity-75'>
         <div className='flex flex-col py-6 px-[6vw] bg-milk'>
@@ -85,7 +93,7 @@ const Navbar = () => {
         <IoIosMenu onClick={showMenuHandler} className='cursor-pointer text-4xl ml-6' />
       </div>
 
-      <img className='cursor-pointer h-[36px] -translate-y-1' src="/logo.svg" alt="Logo" />
+      <img className='cursor-pointer h-[36px] -translate-y-1' src="/logo.svg" alt="Logo" onClick={homeHandler} />
       
       <a className='hidden lg:inline-block text-lg font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Courses</a>
 
@@ -117,7 +125,7 @@ const Navbar = () => {
         </div>
       </div>
       
-    </div>
+    </nav>
   )
 }
 

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Navbar from "./components/layout/Navbar"
 import Home from "./components/pages/Home"
 import Course from "./components/pages/Course"
+import Footer from "./components/layout/Footer"
 
 import { AuthContext } from "./supabase/auth-context"
 import { CoursesContext } from "./supabase/courses-context"
@@ -43,6 +44,7 @@ function App() {
         <Route path="/course/:course_title" element={<Course />} />
 
         </Routes>
+        <Footer />
 
       </CoursesContext.Provider>
     </AuthContext.Provider>

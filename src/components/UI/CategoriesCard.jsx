@@ -10,7 +10,7 @@ const CategoriesCard = (props) => {
   return (
     <div className="flex border w-full lg:w-[31%] lg:h-[12vh] cursor-pointer transition-all hover:scale-[1.01] bg-milk rounded shadow-btn">
       {/*<img className="aspect-square h-full bg-azure" src="" alt="an image" />*/}
-      <div className="aspect-square h-full bg-azure"></div>
+      <div className="aspect-square h-full rounded-l-[3px] bg-azure"></div>
 
       <div className="flex px-5 py-3 justify-between flex-col">
         <h5 className="font-roboto-slab font-semibold text-lg md:text-xl">

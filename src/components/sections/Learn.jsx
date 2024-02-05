@@ -2,7 +2,7 @@ const Learn = () => {
   return (
     <div className="flex flex-col-reverse md:flex-row w-full bg-midnight-green">
       <div className="md:w-[45%] relative">
-        <img className="h-[60vh] md:h-full md:absolute md:top-0 md:left-[7%]" src="/learn_coach.png" alt="" />
+        <img className="h-[60vh] md:h-[80%] md:absolute md:bottom-0 md:left-[7%]" src="/learn_coach.png" alt="" />
       </div>
 
       <div className="flex w-full md:w-[55%] pb-[10vh] px-[10vw] md:pr-[14vw] mt-[8vh] flex-col text-milk">
