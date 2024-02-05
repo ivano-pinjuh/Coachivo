@@ -13,10 +13,10 @@ const CategoriesCard = (props) => {
       <div className="aspect-square h-full bg-azure"></div>
 
       <div className="flex px-5 py-3 justify-between flex-col">
-        <h5 className="font-roboto-slab font-semibold text-xl">
+        <h5 className="font-roboto-slab font-semibold text-lg md:text-xl">
           {category}
         </h5>
-        <p className="font-roboto-slab font-medium opacity-75">
+        <p className="font-roboto-slab text-sm md:text-base font-medium opacity-75">
           {no_of_courses} courses
         </p>
       </div>
