@@ -1,4 +1,12 @@
+import supabase from "../../supabase/supabase"
+
 const Elevate = () => {
+  const signInHandler = () => {
+    supabase.auth.signInWithOAuth({
+      provider: 'google',
+    })
+  }
+  
   return (
     <div className="w-full flex-col md:flex-row flex px-[10vw] md:h-[60vh] bg-milk relative">
 
@@ -11,7 +19,7 @@ const Elevate = () => {
           Sign up for our free trial and unlock a world of exclusive
           content, expert insights, and personalized guidance.
         </p>
-        <button className="w-full md:w-[40%] lg:w-[25vw] text-lg h-10 bg-azure mt-[8vh] font-roboto-slab font-semibold rounded shadow-btn text-milk border-[1px] border-black">
+        <button className="w-full md:w-[40%] lg:w-[25vw] text-lg h-10 bg-azure mt-[8vh] font-roboto-slab font-semibold rounded shadow-btn text-milk border-[1px] hover:opacity-90 transition-all border-black" onClick={signInHandler}>
           Start Free Trial
         </button>
       </div>

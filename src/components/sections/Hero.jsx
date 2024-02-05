@@ -12,7 +12,7 @@ const Hero = () => {
           range of football courses.
         </p>
 
-        <button className="w-full md:w-[35vw] lg:w-[25vw] text-lg h-11 bg-azure mt-[8vh] font-roboto-slab font-semibold rounded shadow-btn text-milk border-[1px] border-black">
+        <button className="w-full md:w-[35vw] lg:w-[25vw] text-lg h-11 bg-azure mt-[8vh] font-roboto-slab font-semibold rounded shadow-btn text-milk border-[1px] hover:opacity-90 transition-all border-black">
           Start now
         </button>
       </div>

@@ -18,11 +18,8 @@ const CourseCard = (props) => {
   }
 
   
-  
-  
-
   return (
-    <div className="flex flex-col rounded-lg h-[380px] md:h-[400px] shadow-nav bg-milk w-[49%] md:w-[23%] overflow-clip">
+    <div className="flex flex-col cursor-pointer hover:scale-[1.01] rounded-lg h-[380px] md:h-[400px] shadow-nav bg-milk w-[49%] md:w-[23%] transition-all overflow-clip">
       {/*<img src="" alt="" />*/}
       <div className="w-full bg-brilliant-azure aspect-video"></div>
       

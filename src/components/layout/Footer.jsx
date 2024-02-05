@@ -12,7 +12,7 @@ const Footer = () => {
         </a>
 
         <div className="flex items-center font-light gap-1 md:gap-2">
-          <a className="font-poppins text-xs md:text-sm" href="">
+          <a className="font-poppins text-xs md:text-sm" href="https://github.com/ivano-pinjuh">
             Created by <span className="font-semibold">Ivano Pinjuh</span>
           </a>
           <FaGithub className="text-2xl" />

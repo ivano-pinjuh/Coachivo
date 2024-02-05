@@ -44,13 +44,13 @@ const NewCourses = () => {
 
         <div className="flex mt-10 w-full flex-wrap gap-y-4 justify-between">
           {coursesData.filter(course => course.area_of_field == currentArea).slice(0, 4).map(course => (
-            <CourseCard course={course} />
+            <CourseCard course={course} key={course.id} />
           ))}
         </div>
       </div>
 
       <div className="w-full flex justify-center">
-        <button className="w-[60%] md:w-[40%] lg:w-[20vw] text-lg h-10 bg-azure mt-[8vh] font-roboto-slab rounded shadow-btn text-milk border-[1px] border-black">
+        <button className="w-[60%] md:w-[40%] lg:w-[20vw] text-lg h-10 bg-azure mt-[8vh] font-roboto-slab rounded shadow-btn text-milk border-[1px] hover:opacity-90 transition-all border-black">
           Explore more
         </button>
       </div>
