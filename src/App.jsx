@@ -8,12 +8,14 @@ import Footer from "./components/layout/Footer"
 
 import { AuthContext } from "./supabase/auth-context"
 import { CoursesContext } from "./supabase/courses-context"
+import { CartContext } from "./supabase/cart-context"
 
 import supabase from "./supabase/supabase"
 
 function App() {
   const [currentUser, setCurrentUser] = useState({isSignedIn: false})
   const [coursesData, setCoursesData] = useState([])
+  const [cartData, setCartData] = useState([])
 
   const getData = async () => {
     try {
@@ -37,15 +39,17 @@ function App() {
   return (
     <AuthContext.Provider value={{currentUser, setCurrentUser}}>
       <CoursesContext.Provider value={{coursesData, setCoursesData}}>
+        <CartContext.Provider value={{cartData, setCartData}}>
 
-        <Navbar />
-        <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/course/:course_title" element={<Course />} />
+          <Navbar />
+          <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/course/:course_title" element={<Course />} />
 
-        </Routes>
-        <Footer />
+          </Routes>
+          <Footer />
 
+        </CartContext.Provider>
       </CoursesContext.Provider>
     </AuthContext.Provider>
   )

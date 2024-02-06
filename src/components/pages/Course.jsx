@@ -1,9 +1,12 @@
 import { useContext } from "react"
 import { useParams } from "react-router-dom"
 import { CoursesContext } from "../../supabase/courses-context"
+import { CartContext } from "../../supabase/cart-context"
 
 const Course = () => {
   const { coursesData, setCoursesData } = useContext(CoursesContext)
+  const { cartData, setCartData } = useContext(CartContext)
+
   const {course_title} = useParams()
   
 
@@ -13,6 +16,35 @@ const Course = () => {
       course = cours
     }
   })
+
+  const addToCartHandler = () => {
+
+    console.log("ww")
+    let temp_data = []
+    let is_there = false
+
+    cartData.forEach(item => {
+      if (item.title === course.title){
+        let value = item
+        value.amount = value.amount + 1
+
+        temp_data.push(value)
+        is_there = true
+      }
+      else {
+        temp_data.push(item)
+      }
+    })
+
+    if (is_there) {
+      setCartData(temp_data)
+      return
+    }
+    setCartData([...temp_data, {title: course.title,
+                                price: course.price,
+                                amount: 1}])
+
+  }
 
 
   
@@ -32,6 +64,8 @@ const Course = () => {
           {course.description}
         </p>
       </div>
+
+      <button onClick={addToCartHandler}>Add to Cart</button>
 
       <div className="absolute top-[calc(100%-2.5rem)] left-[calc(50%-60vw)] md:left-0 h-20 bg-midnight-green md:-translate-x-4 md:pl-8 w-[120vw] md:w-[75vw] skew-x-[-14deg]">
         <div className="skew-x-[14deg] h-full flex items-center">

@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const CoursesContext = createContext({})
+export const CoursesContext = createContext([])
