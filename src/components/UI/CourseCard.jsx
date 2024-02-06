@@ -23,6 +23,7 @@ const CourseCard = (props) => {
   const navigateHandler = () => {
     const nav_title = title.replace(/ /g, "-").toLowerCase()
     navigate(`/course/${nav_title}`)
+    window.scrollTo(0, 0)
   }
 
   
