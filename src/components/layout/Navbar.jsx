@@ -3,18 +3,18 @@ import { IoIosSearch } from "react-icons/io"
 import { MdOutlineShoppingCart } from 'react-icons/md' 
 import { AiOutlineClose } from "react-icons/ai"
 
-import { useState } from 'react'
-
 import supabase from '../../supabase/supabase'
 
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { AuthContext } from '../../supabase/auth-context'
+import { CartContext } from '../../supabase/cart-context'
 import { useNavigate } from 'react-router-dom'
+
 
 
 const Navbar = () => {
   const { currentUser, setCurrentUser } = useContext(AuthContext)
-
+  const { cartData, setCartData } = useContext(CartContext)
   const [menuShown, setMenuShown] = useState(false)
 
   const navigate = useNavigate()
@@ -31,6 +31,10 @@ const Navbar = () => {
     window.scrollTo(0, 0)
   }
 
+  let total = 0
+  cartData.forEach(item => {
+    total = total + item.amount
+  })
 
 
   const signInHandler = () => {
@@ -121,7 +125,13 @@ const Navbar = () => {
       <div className='flex h-full items-center'>
         <div className='flex'>
           <IoIosSearch className='cursor-pointer lg:hidden text-3xl hover:opacity-75 transition-all' />
-          <MdOutlineShoppingCart onClick={navCart} className='cursor-pointer text-3xl md:text lg:-mr-6 mx-2 hover:opacity-75 transition-all' />
+          <div className='relative'>
+            <MdOutlineShoppingCart onClick={navCart} className='cursor-pointer text-3xl md:text lg:-mr-6 mx-2 hover:opacity-75 transition-all' />
+            {total>0 && 
+            <p className='absolute h-4 w-4 rounded-full translate-x-3 text-center text-xs text-milk -top-1 left-full bg-azure'>
+              {total}
+            </p>}
+          </div>
         </div>
 
         <div className='hidden lg:flex bg-grayish h-full w-fit px-12 pl-4 skew-x-[-18deg] translate-x-10'>

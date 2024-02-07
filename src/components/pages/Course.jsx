@@ -1,3 +1,5 @@
+import { GoClock } from "react-icons/go"
+
 import { useContext } from "react"
 import { useParams } from "react-router-dom"
 import { CoursesContext } from "../../supabase/courses-context"
@@ -39,14 +41,14 @@ const Course = () => {
       return
     }
 
-    setCartData([...temp_data, {title: course.title, price: course.price, amount: 1}])
+    setCartData([...temp_data, {title: course.title, price: course.price, author: course.author, amount: 1}])
   }
 
 
 
 
   return (
-    <div className="w-full min-h-fit pb-[14vh] pt-[10vh] md:pb-[13vh] md:pt-[12vh] overflow-x-clip border-b-[1px] m-0 bg-isabelline relative mb-[80vh]">
+    <div className="w-full min-h-fit pb-[14vh] pt-[10vh] md:pb-[13vh] md:pt-[12vh] overflow-x-clip border-b-[1px] m-0 bg-isabelline relative mb-[40vh]">
       <div className="w-full px-[10%]">
         <h3 className="font-poppins font-bold sm:max-w-[60vw] md:max-w-[45vw] lg:max-w-[35vw] text-4xl text-shadow">
           {course.title}
@@ -61,13 +63,16 @@ const Course = () => {
         </p>
       </div>
 
-      <button onClick={addToCartHandler}>Add to Cart</button>
+      <button onClick={addToCartHandler} className="w-[20%] ml-[10vw] text-lg h-11 bg-azure mt-[8vh] font-roboto-slab rounded-sm text-milk border-[1px] hover:opacity-90 transition-all border-black">
+        Add to Cart
+      </button>
 
       <div className="absolute top-[calc(100%-2.5rem)] left-[calc(50%-60vw)] md:left-0 h-20 bg-midnight-green md:-translate-x-4 md:pl-8 w-[120vw] md:w-[75vw] skew-x-[-14deg]">
-        <div className="skew-x-[14deg] h-full flex items-center">
+        <div className="skew-x-[14deg] h-full flex items-center justify-between">
 
-          <div>
-            <p className="font-poppins text-sm lg:text-2xl pl-[9vw] md:pr-[5vw] font-semibold text-milk">
+          <div className="flex items-center pl-[9vw] gap-3">
+            <GoClock className="text-3xl text-milk" />
+            <p className="font-poppins text-sm lg:text-2xl md:pr-[5vw] font-semibold text-milk">
               {course.time_to_complete}
             </p>
           </div>
