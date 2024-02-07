@@ -1,4 +1,12 @@
+import supabase from "../../supabase/supabase"
+
 const Hero = () => {
+  const signInHandler = () => {
+    supabase.auth.signInWithOAuth({
+      provider: 'google',
+    })
+  }
+
   return (
     <div className="w-full min-h-fit pb-[14vh] pt-[10vh] md:pb-[13vh] md:pt-[8vh] overflow-x-clip border-b-[1px] m-0 bg-isabelline relative">
       <div className="w-full px-[10%]">
@@ -12,7 +20,7 @@ const Hero = () => {
           range of football courses.
         </p>
 
-        <button className="w-full md:w-[35vw] lg:w-[25vw] text-lg h-11 bg-azure mt-[8vh] font-roboto-slab font-semibold rounded shadow-btn text-milk border-[1px] hover:opacity-90 transition-all border-black">
+        <button onClick={signInHandler} className="w-full md:w-[35vw] lg:w-[25vw] text-lg h-11 bg-azure mt-[8vh] font-roboto-slab font-semibold rounded shadow-btn text-milk border-[1px] hover:opacity-90 transition-all border-black">
           Start now
         </button>
       </div>

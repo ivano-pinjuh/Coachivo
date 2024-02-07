@@ -18,8 +18,17 @@ const Navbar = () => {
   const [menuShown, setMenuShown] = useState(false)
 
   const navigate = useNavigate()
-  const homeHandler = () => {
+  const navHome = () => {
     navigate("/")
+    window.scrollTo(0, 0)
+  }
+  const navCart = () => {
+    navigate("/cart")
+    window.scrollTo(0, 0)
+  }
+  const navCourses = () => {
+    navigate("/courses")
+    window.scrollTo(0, 0)
   }
 
 
@@ -75,7 +84,7 @@ const Navbar = () => {
           </div>
 
           <div className='flex flex-col gap-6 py-6 pl-2'>
-            <a className='text-lg font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Courses</a>
+            <a onClick={navCourses} className='text-lg font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Courses</a>
             <a className='text-lg font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Pricing</a>
             <a className='text-lg font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Become a coach</a>
           </div>
@@ -93,9 +102,9 @@ const Navbar = () => {
         <IoIosMenu onClick={showMenuHandler} className='cursor-pointer text-4xl ml-6' />
       </div>
 
-      <img className='cursor-pointer h-[36px] -translate-y-1' src="/logo.svg" alt="Logo" onClick={homeHandler} />
+      <img className='cursor-pointer h-[36px] -translate-y-1' src="/logo.svg" alt="Logo" onClick={navHome} />
       
-      <a className='hidden lg:inline-block text-lg font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Courses</a>
+      <a onClick={navCourses} className='hidden lg:inline-block text-lg font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Courses</a>
 
       <div className='hidden lg:flex items-center justify-between rounded h-[42px] border w-80'>
         <input id='search' className='h-10 flex-grow outline-none px-4 rounded-l font-roboto-slab text-xs' type="text" placeholder='Search for anything' />
@@ -112,7 +121,7 @@ const Navbar = () => {
       <div className='flex h-full items-center'>
         <div className='flex'>
           <IoIosSearch className='cursor-pointer lg:hidden text-3xl hover:opacity-75 transition-all' />
-          <MdOutlineShoppingCart className='cursor-pointer text-3xl md:text lg:-mr-6 mx-2 hover:opacity-75 transition-all' />
+          <MdOutlineShoppingCart onClick={navCart} className='cursor-pointer text-3xl md:text lg:-mr-6 mx-2 hover:opacity-75 transition-all' />
         </div>
 
         <div className='hidden lg:flex bg-grayish h-full w-fit px-12 pl-4 skew-x-[-18deg] translate-x-10'>

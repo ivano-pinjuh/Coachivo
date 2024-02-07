@@ -18,8 +18,6 @@ const Course = () => {
   })
 
   const addToCartHandler = () => {
-
-    console.log("ww")
     let temp_data = []
     let is_there = false
 
@@ -40,14 +38,12 @@ const Course = () => {
       setCartData(temp_data)
       return
     }
-    setCartData([...temp_data, {title: course.title,
-                                price: course.price,
-                                amount: 1}])
 
+    setCartData([...temp_data, {title: course.title, price: course.price, amount: 1}])
   }
 
 
-  
+
 
   return (
     <div className="w-full min-h-fit pb-[14vh] pt-[10vh] md:pb-[13vh] md:pt-[12vh] overflow-x-clip border-b-[1px] m-0 bg-isabelline relative mb-[80vh]">
