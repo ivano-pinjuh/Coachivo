@@ -30,6 +30,15 @@ const Navbar = () => {
     navigate("/courses")
     window.scrollTo(0, 0)
   }
+  const navCoach = () => {
+    navigate("/become-coach")
+    window.scrollTo(0, 0)
+  }
+  const navPricing = () => {
+    navigate("/pricing")
+    window.scrollTo(0, 0)
+  }
+
 
   let total = 0
   cartData.forEach(item => {
@@ -89,8 +98,8 @@ const Navbar = () => {
 
           <div className='flex flex-col gap-6 py-6 pl-2'>
             <a onClick={navCourses} className='text-lg font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Courses</a>
-            <a className='text-lg font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Pricing</a>
-            <a className='text-lg font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Become a coach</a>
+            <a onClick={navPricing} lassName='text-lg font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Pricing</a>
+            <a onClick={navCoach} className='text-lg font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Become a coach</a>
           </div>
           
           <div className='w-full flex justify-between items-center pt-5 border-t'>
@@ -118,8 +127,8 @@ const Navbar = () => {
       </div>
 
       <div className='hidden lg:flex w-fit gap-8 px-6'>
-        <a className='text-lg hidden xl:inline-block font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Become a coach</a>
-        <a className='text-lg font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Pricing</a>
+        <a onClick={navCoach} className='text-lg hidden xl:inline-block font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Become a coach</a>
+        <a onClick={navPricing} className='text-lg font-semibold font-poppins cursor-pointer hover:border-b transition-all'>Pricing</a>
       </div>
 
       <div className='flex h-full items-center'>

@@ -6,6 +6,8 @@ import Home from "./components/pages/Home"
 import Courses from "./components/pages/Courses"
 import Course from "./components/pages/Course"
 import Cart from "./components/pages/Cart"
+import BecomeCoach from "./components/pages/BecomeCoach"
+import Pricing from "./components/pages/Pricing"
 import Footer from "./components/layout/Footer"
 
 import { AuthContext } from "./supabase/auth-context"
@@ -46,6 +48,8 @@ function App() {
           <Navbar />
           <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/become-coach" element={<BecomeCoach />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/course/:course_title" element={<Course />} />
           <Route path="/cart" element={<Cart />} />
