@@ -16,7 +16,7 @@ const CartItem = (props) => {
   }
 
   return (
-    <div className="w-full h-28 flex justify-between gap-2 border-2">
+    <div className="w-full h-28 flex justify-between gap-2 border">
       <div className="flex flex-grow">
         <div className="bg-azure h-full aspect-video"></div>
 
@@ -32,7 +32,7 @@ const CartItem = (props) => {
 
       </div>
 
-      <div className="flex flex-wrap justify-end w-[20%] border pr-4">
+      <div className="flex flex-wrap justify-end w-[20%] pr-4">
         <p className="font-roboto-slab text-lg pr-2">
           {props.item.amount}x
         </p>
