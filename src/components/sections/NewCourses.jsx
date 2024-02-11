@@ -1,9 +1,16 @@
 import { useContext, useRef, useState } from "react"
 import CourseCard from "../UI/CourseCard"
 import { CoursesContext } from "../../supabase/courses-context"
+import { useNavigate } from 'react-router-dom'
 
 const NewCourses = () => {
   const { coursesData, setCoursesData } = useContext(CoursesContext)
+  const navigate = useNavigate()
+
+  const navCourses = () => {
+    navigate("/courses")
+    window.scrollTo(0, 0)
+  }
 
   const [currentArea, setCurrentArea] = useState("Defense")
 
@@ -50,7 +57,7 @@ const NewCourses = () => {
       </div>
 
       <div className="w-full flex justify-center">
-        <button className="w-[60%] md:w-[40%] lg:w-[20vw] text-lg h-10 bg-azure mt-[8vh] font-roboto-slab rounded shadow-btn text-milk border-[1px] hover:opacity-90 transition-all border-black">
+        <button onClick={navCourses} className="w-[60%] md:w-[40%] lg:w-[20vw] text-lg h-10 bg-azure mt-[8vh] font-roboto-slab rounded shadow-btn text-milk border-[1px] hover:opacity-90 transition-all border-black">
           Explore more
         </button>
       </div>
