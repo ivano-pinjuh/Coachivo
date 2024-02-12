@@ -109,7 +109,7 @@ const Navbar = () => {
 
       <div className='hidden lg:flex items-center justify-between rounded h-[42px] border w-80'>
         <input id='search' className='h-10 flex-grow outline-none px-4 rounded-l font-roboto-slab text-xs' type="text" placeholder='Search for anything' />
-        <div className='cursor-pointer flex justify-center border-t border-b items-center rounded-r h-[42px] w-[42px] bg-azure hover:opacity-90 transition-all'>
+        <div onClick={navHome} className='cursor-pointer flex justify-center border-t border-b items-center rounded-r h-[42px] w-[42px] bg-azure hover:opacity-90 transition-all'>
           <IoIosSearch className='text-milk text-2xl' />
         </div>
       </div>
